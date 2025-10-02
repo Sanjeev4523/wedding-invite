@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { MapPinIcon } from '@heroicons/react/24/outline';
 
 export default function FlipCards() {
-  const [flippedCard, setFlippedCard] = useState<number | null>(null);
+  const [flippedCards, setFlippedCards] = useState<boolean[]>([]);
 
   const events = [
     {
@@ -40,7 +40,7 @@ export default function FlipCards() {
       className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 max-w-md sm:max-w-2xl md:max-w-3xl mx-auto w-full"
     >
       {events.map((event, i) => {
-        const isFlipped = flippedCard === event.id;
+        const isFlipped = flippedCards[i] || false;
 
         return (
           <motion.div
@@ -54,11 +54,17 @@ export default function FlipCards() {
               type="button"
               aria-label={`${event.title} details`}
               aria-expanded={isFlipped}
-              onClick={() => setFlippedCard(isFlipped ? null : event.id)}
+              onClick={() => {
+                const newFlippedCards = [...flippedCards];
+                newFlippedCards[i] = !isFlipped;
+                setFlippedCards(newFlippedCards);
+              }}
               onKeyDown={(e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
                   e.preventDefault();
-                  setFlippedCard(isFlipped ? null : event.id);
+                  const newFlippedCards = [...flippedCards];
+                  newFlippedCards[i] = !isFlipped;
+                  setFlippedCards(newFlippedCards);
                 }
               }}
               className="relative w-full h-full transform-style-preserve-3d duration-700 ease-out rounded-[1.5rem] outline-none focus:ring-2 focus:ring-gold/60"
