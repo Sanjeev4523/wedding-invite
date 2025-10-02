@@ -22,7 +22,12 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Vidhi & Sanjeev - Wedding Invitation",
-  description: "Join us in celebrating our special day on November 7-8, 2024",
+  description: "Join us in celebrating our special day on November 7-8, 2025",
+  icons: {
+    icon: '/vs-logo.png',
+    shortcut: '/vs-logo.png',
+    apple: '/vs-logo.png',
+  },
 };
 
 export default function RootLayout({

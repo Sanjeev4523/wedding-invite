@@ -17,7 +17,7 @@ export default function HeroSection() {
         transition={{ duration: 0.8, delay: 0.3 }}
         className="text-white/90 font-script text-base sm:text-lg md:text-2xl tracking-wide mb-4 md:mb-6"
       >
-        November 7–8, 2024
+        November 7–8, 2025
       </motion.div>
 
       {/* Names */}
