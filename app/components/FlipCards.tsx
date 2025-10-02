@@ -24,7 +24,7 @@ export default function FlipCards() {
       date: '8th November',
       emoji: '💍',
       title: 'Wedding Ceremony',
-      time: 'Morning',
+      time: 'Evening',
       venue: 'Sharon Resort',
       mapsUrl: 'https://maps.app.goo.gl/BEpBdpDC4uffB6id6',
       details:
