@@ -9,17 +9,6 @@ export default function FlipCards() {
 
   const events = [
     {
-      id: 1,
-      date: '7th November',
-      emoji: '🪔',
-      title: 'Haldi & Sangeet',
-      time: 'Morning & Evening',
-      venue: 'Whispering Willows',
-      mapsUrl: 'https://maps.app.goo.gl/gLTbBe8BqmcyjYgK6',
-      details:
-        'Haldi in the morning, followed by music, dance and celebration at Sangeet in the evening.',
-    },
-    {
       id: 2,
       date: '8th November',
       emoji: '💍',
@@ -37,7 +26,7 @@ export default function FlipCards() {
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay: 0.2 }}
-      className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 max-w-md sm:max-w-2xl md:max-w-3xl mx-auto w-full"
+      className="grid grid-cols-1 gap-4 sm:gap-6 max-w-md sm:max-w-lg mx-auto w-full"
     >
       {events.map((event, i) => {
         const isFlipped = flippedCards[i] || false;
