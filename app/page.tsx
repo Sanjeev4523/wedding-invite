@@ -2,7 +2,8 @@
 'use client';
 import Image from 'next/image';
 import HeroSection from './components/HeroSection';
-import FlipCards from './components/FlipCards';
+import GallerySection from './components/GallerySection';
+import MemoryCTA from './components/MemoryCTA';
 
 export default function Home() {
   return (
@@ -24,8 +25,12 @@ export default function Home() {
           <HeroSection />
         </section>
 
+        <section className="px-4 sm:px-6 py-12 sm:py-16 lg:py-20">
+          <GallerySection />
+        </section>
+
         <section className="px-4 sm:px-6 pb-[max(4rem,env(safe-area-inset-bottom))]">
-          <FlipCards />
+          <MemoryCTA />
         </section>
       </main>
     </div>

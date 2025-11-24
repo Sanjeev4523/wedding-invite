@@ -21,8 +21,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Vidhi & Sanjeev - Wedding Invitation",
-  description: "Join us in celebrating our special day on November 7-8, 2025",
+  title: "Vidhi & Sanjeev - Wedding Gratitude",
+  description: "Thank you for surrounding our wedding with love. Relive the memories with us.",
   icons: {
     icon: '/vs-logo.png',
     shortcut: '/vs-logo.png',

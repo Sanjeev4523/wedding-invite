@@ -1,58 +1,66 @@
 // app/components/HeroSection.tsx
 'use client';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 export default function HeroSection() {
   return (
-    <motion.div
+    <motion.section
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: 'easeOut' }}
-      className="text-center px-4"
+      className="max-w-6xl mx-auto"
     >
-      {/* Date */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.3 }}
-        className="text-white/90 font-script text-base sm:text-lg md:text-2xl tracking-wide mb-4 md:mb-6"
-      >
-        November 7–8, 2025
-      </motion.div>
+      <div className="grid gap-10 lg:gap-16 lg:grid-cols-[1.1fr_0.9fr] items-center">
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.2 }}
+          className="text-center lg:text-left space-y-6"
+        >
+          <p className="text-gold font-script text-lg sm:text-xl tracking-[0.3em] uppercase">
+            thank you
+          </p>
+          <h1 className="font-serif leading-tight text-4xl sm:text-5xl md:text-6xl text-white">
+            You filled our wedding with the warmest blessings.
+          </h1>
+          <p className="text-white/85 text-base sm:text-lg leading-relaxed">
+            Every hug, every dance, and every whispered wish still echoes through our hearts. Your
+            presence wrapped the weekend in love, and we can’t stop replaying the glow you brought
+            to both days.
+          </p>
+          <div className="pt-2">
+            <p className="text-white/70 text-xs tracking-[0.4em] uppercase">With love</p>
+            <p className="font-serif text-white text-3xl sm:text-4xl">Singla &amp; Gupta Family</p>
+          </div>
+        </motion.div>
 
-      {/* Names */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 0.5 }}
-        className="space-y-1 md:space-y-2 mb-6 md:mb-8"
-      >
-        <h1 className="font-serif leading-tight text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light text-white">
-          <span className="block">Vidhi</span>
-          <span className="text-gold font-script text-3xl sm:text-4xl md:text-5xl mx-3 md:mx-4">
-            &
-          </span>
-          <span className="block">Sanjeev</span>
-        </h1>
-      </motion.div>
-
-      {/* Subtitle */}
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.8 }}
-        className="text-white/85 font-sans text-sm sm:text-base md:text-lg max-w-[28rem] sm:max-w-xl md:max-w-2xl mx-auto leading-relaxed"
-      >
-        Together with our families, we invite you to celebrate our special day
-      </motion.p>
-
-      {/* Divider */}
-      <motion.div
-        initial={{ scaleX: 0 }}
-        animate={{ scaleX: 1 }}
-        transition={{ duration: 1, delay: 1.2 }}
-        className="w-16 md:w-24 h-px bg-gold mx-auto mt-6 md:mt-8"
-      />
-    </motion.div>
+        <motion.figure
+          initial={{ opacity: 0, y: 35 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.35 }}
+          className="relative rounded-[2.75rem] overflow-hidden border border-white/15 shadow-[0_25px_65px_rgba(0,0,0,0.45)]"
+        >
+          <div className="relative aspect-[4/5]">
+            <Image
+              src="/wedding-family.JPG"
+              alt="Vidhi and Sanjeev surrounded by family"
+              fill
+              priority
+              className="object-contain"
+              sizes="(max-width: 1024px) 100vw, 40vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent" />
+            <figcaption className="absolute inset-x-0 bottom-0 p-6 text-white space-y-2">
+              <p className="text-sm uppercase tracking-[0.3em] text-white/70">Family blessings</p>
+              <p className="font-serif text-2xl">Sharon Resort · November 8, 2025</p>
+              <p className="text-white/80 text-sm">
+                We’ll be grateful forever for every soul in this frame and beyond.
+              </p>
+            </figcaption>
+          </div>
+        </motion.figure>
+      </div>
+    </motion.section>
   );
 }
